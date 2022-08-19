@@ -19,6 +19,9 @@ class GetStream<T> {
   bool? _isBusy = false;
 
   FutureOr<bool?> removeSubscription(LightSubscription<T> subs) async {
+    if (_isBusy == null) {
+      return true;
+    }
     if (!_isBusy!) {
       return _onData!.remove(subs);
     } else {

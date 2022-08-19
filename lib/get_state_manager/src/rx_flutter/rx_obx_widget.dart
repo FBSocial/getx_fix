@@ -44,8 +44,12 @@ class _ObxState extends State<ObxWidget> {
 
   @override
   void dispose() {
-    subs.cancel();
-    _observer.close();
+    if (subs != null) {
+      subs.cancel();
+    }
+    if (_observer != null) {
+      _observer.close();
+    }
     super.dispose();
   }
 
