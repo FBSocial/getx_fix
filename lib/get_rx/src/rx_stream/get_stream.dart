@@ -31,6 +31,9 @@ class GetStream<T> {
   }
 
   FutureOr<void> addSubscription(LightSubscription<T> subs) async {
+    if (_isBusy == null) {
+      return;
+    }
     if (!_isBusy!) {
       return _onData!.add(subs);
     } else {
