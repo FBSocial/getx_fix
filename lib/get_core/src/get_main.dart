@@ -6,7 +6,7 @@ import 'get_interface.dart';
 ///To return to the previous screen, use back().
 ///No need to pass any context to Get, just put the name of the route inside
 ///the parentheses and the magic will occur.
-class _GetImpl extends GetInterface {}
+class GetImpl extends GetInterface {}
 
 // ignore: non_constant_identifier_names
-final Get = _GetImpl();
+final Get = GetImpl();
